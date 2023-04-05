@@ -10,6 +10,9 @@ class MetodyPomocnicze
 {
 public:
     static string konwerjsaIntNaString(int liczba);
+    string wczytajLinie();
+    char wczytajZnak();
+    int wczytajLiczbeCalkowita();
 };
 
 #endif
