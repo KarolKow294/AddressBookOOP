@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "UzytkownikMenedzer.h"
+#include "AdresatMenedzer.h"
 #include "Menu.h"
 
 using namespace std;
@@ -11,6 +12,7 @@ using namespace std;
 class KsiazkaAdresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
+    AdresatMenedzer adresatMenedzer;
     Menu menu;
 public:
     KsiazkaAdresowa(string nazwaZPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaZPlikuZUzytkownikami) {
@@ -24,6 +26,11 @@ public:
     char wybierzOpcjeZMenuUzytkownika();
     int pobierzIdZalogowanegoUzytkownika();
     void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika);
+    void dodajAdresata();
+    void wyswietlWszystkichAdresatow();
+    bool czyVectorAdresaciJestPusty();
+    void ustawPoczatkoweIdAdresata(int noweIdAdresata);
+    void czyszczenieVectoraAdresaci();
 };
 
 #endif

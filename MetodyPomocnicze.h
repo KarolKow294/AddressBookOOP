@@ -13,6 +13,7 @@ public:
     string wczytajLinie();
     char wczytajZnak();
     int wczytajLiczbeCalkowita();
+    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 };
 
 #endif

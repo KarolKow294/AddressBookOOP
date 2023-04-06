@@ -39,3 +39,28 @@ void KsiazkaAdresowa::ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytk
 {
     uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(noweIdZalogowanegoUzytkownika);
 }
+
+void KsiazkaAdresowa::dodajAdresata()
+{
+    adresatMenedzer.dodajAdresata(pobierzIdZalogowanegoUzytkownika());
+}
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
+{
+    adresatMenedzer.wyswietlWszystkichAdresatow();
+}
+
+bool KsiazkaAdresowa::czyVectorAdresaciJestPusty()
+{
+    return adresatMenedzer.czyVectorAdresaciJestPusty();
+}
+
+void KsiazkaAdresowa::ustawPoczatkoweIdAdresata(int noweIdAdresata)
+{
+    adresatMenedzer.ustawPoczatkoweIdAdresata(noweIdAdresata);
+}
+
+void KsiazkaAdresowa::czyszczenieVectoraAdresaci()
+{
+    adresatMenedzer.czyszczenieVectoraAdresaci();
+}

@@ -1,5 +1,5 @@
 #include "MetodyPomocnicze.h"
-
+#include <algorithm>
 
 string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
 {
@@ -50,4 +50,14 @@ int MetodyPomocnicze::wczytajLiczbeCalkowita()
         cout << "To nie jest liczba. Wpisz ponownie. " << endl;
     }
     return liczba;
+}
+
+string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
+{
+    if (!tekst.empty())
+    {
+        transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
+        tekst[0] = toupper(tekst[0]);
+    }
+    return tekst;
 }

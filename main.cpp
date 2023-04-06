@@ -10,6 +10,7 @@ int main()
 
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
     ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
+    ksiazkaAdresowa.ustawPoczatkoweIdAdresata(0);
 
     while (true)
     {
@@ -36,10 +37,7 @@ int main()
         }
         else
         {
-            //if (adresaci.empty() == true)
-                // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
-                // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
-                // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
+            if (ksiazkaAdresowa.czyVectorAdresaciJestPusty())
                 //idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
 
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
@@ -48,16 +46,17 @@ int main()
             {
             case '1':
                 //idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
+                ksiazkaAdresowa.dodajAdresata();
                 break;
             case '2':
-                //wyswietlWszystkichAdresatow(adresaci);
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '3':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '4':
                 ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
-                //adresaci.clear();
+                ksiazkaAdresowa.czyszczenieVectoraAdresaci();
                 break;
             }
         }
