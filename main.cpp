@@ -1,24 +1,21 @@
 #include <iostream>
 
 #include "KsiazkaAdresowa.h"
-#include "Menu.h"
 
 using namespace std;
 
 int main()
 {
     char wybor;
-    int idZalogowanegoUzytkownika;
-    //vector <Adresat> adresaci;
 
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
-    Menu menu;
+    ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
 
     while (true)
     {
-        if (idZalogowanegoUzytkownika == 0)
+        if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0)
         {
-            wybor = menu.wybierzOpcjeZMenuGlownego();
+            wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
 
             switch (wybor)
             {
@@ -26,7 +23,7 @@ int main()
                 ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
             case '2':
-                idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika();
+                ksiazkaAdresowa.logowanieUzytkownika();
                 break;
             case '9':
                 exit(0);
@@ -45,7 +42,7 @@ int main()
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
                 //idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
 
-            wybor = menu.wybierzOpcjeZMenuUzytkownika();
+            wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
             {
@@ -56,10 +53,10 @@ int main()
                 //wyswietlWszystkichAdresatow(adresaci);
                 break;
             case '3':
-                //zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '4':
-                idZalogowanegoUzytkownika = 0;
+                ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
                 //adresaci.clear();
                 break;
             }
