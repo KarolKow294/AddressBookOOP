@@ -17,14 +17,18 @@ class AdresatMenedzer
 
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
     void wyswietlDaneAdresata(Adresat adresat);
+    PlikZAdresatami plikZAdresatami;
     MetodyPomocnicze metodyPomocnicze;
 
 public:
+    AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
     int dodajAdresata(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
     bool czyVectorAdresaciJestPusty();
-    void ustawPoczatkoweIdAdresata(int noweIdAdresata);
+    void ustawIdOstatniegoAdresata(int noweIdAdresata);
+    int pobierzIdOstatniegoAdresata();
     void czyszczenieVectoraAdresaci();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
 };
 
 #endif

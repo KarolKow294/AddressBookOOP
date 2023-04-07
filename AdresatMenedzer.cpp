@@ -9,7 +9,7 @@ int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
     adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
 
     adresaci.push_back(adresat);
-    //dopiszAdresataDoPliku(adresat);
+    plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
     return idOstatniegoAdresata;
 }
@@ -75,12 +75,22 @@ bool AdresatMenedzer::czyVectorAdresaciJestPusty()
     return adresaci.empty();
 }
 
-void AdresatMenedzer::ustawPoczatkoweIdAdresata(int noweIdAdresata)
+void AdresatMenedzer::ustawIdOstatniegoAdresata(int noweIdAdresata)
 {
     idOstatniegoAdresata = noweIdAdresata;
+}
+
+int AdresatMenedzer::pobierzIdOstatniegoAdresata()
+{
+    return idOstatniegoAdresata;
 }
 
 void AdresatMenedzer::czyszczenieVectoraAdresaci()
 {
     adresaci.clear();
+}
+
+void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
+{
+    ustawIdOstatniegoAdresata(plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika));
 }

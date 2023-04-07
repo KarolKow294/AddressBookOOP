@@ -8,7 +8,7 @@ int main()
 {
     char wybor;
 
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
     ksiazkaAdresowa.ustawPoczatkoweIdAdresata(0);
 
@@ -38,7 +38,10 @@ int main()
         else
         {
             if (ksiazkaAdresowa.czyVectorAdresaciJestPusty())
+            {
+                ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
                 //idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
+            }
 
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
@@ -61,8 +64,5 @@ int main()
             }
         }
     }
-
-    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-
     return 0;
 }
