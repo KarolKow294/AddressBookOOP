@@ -15,7 +15,10 @@ class KsiazkaAdresowa
     AdresatMenedzer adresatMenedzer;
     Menu menu;
 public:
-    KsiazkaAdresowa(string nazwaZPlikuZUzytkownikami, string nazwaZPlikuZAdresatami) : uzytkownikMenedzer(nazwaZPlikuZUzytkownikami), adresatMenedzer(nazwaZPlikuZAdresatami) {
+    KsiazkaAdresowa(int noweIdZalogowanegoUzytkownika, string nazwaZPlikuZUzytkownikami, int noweIdAdresata, string nazwaZPlikuZAdresatami) : uzytkownikMenedzer(nazwaZPlikuZUzytkownikami),
+    adresatMenedzer(nazwaZPlikuZAdresatami) {
+    uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(noweIdZalogowanegoUzytkownika);
+    adresatMenedzer.ustawIdOstatniegoAdresata(noweIdAdresata);
     uzytkownikMenedzer.wczytajUzytkownikowZPliku();
     };
     void rejestracjaUzytkownika();
@@ -28,7 +31,6 @@ public:
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
     bool czyVectorAdresaciJestPusty();
-    void ustawPoczatkoweIdAdresata(int noweIdAdresata);
     int pobierzIdOstatniegoAdresata();
     void czyszczenieVectoraAdresaci();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();

@@ -8,9 +8,7 @@ int main()
 {
     char wybor;
 
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
-    ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
-    ksiazkaAdresowa.ustawPoczatkoweIdAdresata(0);
+    KsiazkaAdresowa ksiazkaAdresowa(0, "Uzytkownicy.txt", 0, "Adresaci.txt");
 
     while (true)
     {
@@ -40,7 +38,6 @@ int main()
             if (ksiazkaAdresowa.czyVectorAdresaciJestPusty())
             {
                 ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-                //idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
             }
 
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
@@ -48,7 +45,6 @@ int main()
             switch (wybor)
             {
             case '1':
-                //idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
                 ksiazkaAdresowa.dodajAdresata();
                 break;
             case '2':

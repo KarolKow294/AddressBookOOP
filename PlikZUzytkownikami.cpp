@@ -6,7 +6,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
     fstream plikTekstowy;
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
 
-    if (plikTekstowy.good() == true)
+    if (plikTekstowy.good())
     {
         liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
 
@@ -44,14 +44,13 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
 
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::in);
 
-    if (plikTekstowy.good() == true)
+    if (plikTekstowy.good())
     {
         while (getline(plikTekstowy, daneJednegoUzytkownikaOddzielonePionowymiKreskami))
         {
             uzytkownik = pobierzDaneUzytkownika(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
             uzytkownicy.push_back(uzytkownik);
         }
-
     }
     plikTekstowy.close();
     return uzytkownicy;

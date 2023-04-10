@@ -9,7 +9,7 @@ int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adres
     fstream plikTekstowy;
     plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
 
-    if (plikTekstowy.good() == true)
+    if (plikTekstowy.good())
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
         {
@@ -101,11 +101,11 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
     fstream plikTekstowy;
     plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::out | ios::app);
 
-    if (plikTekstowy.good() == true)
+    if (plikTekstowy.good())
     {
         liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
 
-        if (metodyPomocnicze.czyPlikJestPusty(plikTekstowy) == true)
+        if (metodyPomocnicze.czyPlikJestPusty(plikTekstowy))
         {
             plikTekstowy << liniaZDanymiAdresata;
         }

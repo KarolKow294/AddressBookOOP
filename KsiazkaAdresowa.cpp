@@ -50,11 +50,6 @@ bool KsiazkaAdresowa::czyVectorAdresaciJestPusty()
     return adresatMenedzer.czyVectorAdresaciJestPusty();
 }
 
-void KsiazkaAdresowa::ustawPoczatkoweIdAdresata(int noweIdAdresata)
-{
-    adresatMenedzer.ustawIdOstatniegoAdresata(noweIdAdresata);
-}
-
 int KsiazkaAdresowa::pobierzIdOstatniegoAdresata()
 {
     return adresatMenedzer.pobierzIdOstatniegoAdresata();
