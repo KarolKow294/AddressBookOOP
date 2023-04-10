@@ -5,11 +5,6 @@ void KsiazkaAdresowa::rejestracjaUzytkownika()
     uzytkownikMenedzer.rejestracjaUzytkownika();
 }
 
-void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
-{
-    uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
-}
-
 void KsiazkaAdresowa::logowanieUzytkownika()
 {
     uzytkownikMenedzer.logowanieUzytkownika();
@@ -22,20 +17,56 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {
-    menu.wybierzOpcjeZMenuGlownego();
+    return menu.wybierzOpcjeZMenuGlownego();
 }
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 {
-    menu.wybierzOpcjeZMenuUzytkownika();
+    return menu.wybierzOpcjeZMenuUzytkownika();
 }
 
 int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika()
 {
-    uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
+    return uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
 }
 
 void KsiazkaAdresowa::ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika)
 {
     uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(noweIdZalogowanegoUzytkownika);
+}
+
+void KsiazkaAdresowa::dodajAdresata()
+{
+    adresatMenedzer.dodajAdresata(pobierzIdZalogowanegoUzytkownika());
+}
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
+{
+    adresatMenedzer.wyswietlWszystkichAdresatow();
+}
+
+bool KsiazkaAdresowa::czyVectorAdresaciJestPusty()
+{
+    return adresatMenedzer.czyVectorAdresaciJestPusty();
+}
+
+void KsiazkaAdresowa::ustawPoczatkoweIdAdresata(int noweIdAdresata)
+{
+    adresatMenedzer.ustawIdOstatniegoAdresata(noweIdAdresata);
+}
+
+int KsiazkaAdresowa::pobierzIdOstatniegoAdresata()
+{
+    return adresatMenedzer.pobierzIdOstatniegoAdresata();
+}
+
+void KsiazkaAdresowa::czyszczenieVectoraAdresaci()
+{
+    adresatMenedzer.czyszczenieVectoraAdresaci();
+}
+
+void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+{
+    int idZalogowanegoUzytkownika = uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
+    adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }

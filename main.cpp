@@ -8,8 +8,9 @@ int main()
 {
     char wybor;
 
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
+    ksiazkaAdresowa.ustawPoczatkoweIdAdresata(0);
 
     while (true)
     {
@@ -36,11 +37,11 @@ int main()
         }
         else
         {
-            //if (adresaci.empty() == true)
-                // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
-                // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
-                // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
+            if (ksiazkaAdresowa.czyVectorAdresaciJestPusty())
+            {
+                ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
                 //idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
+            }
 
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
@@ -48,22 +49,20 @@ int main()
             {
             case '1':
                 //idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
+                ksiazkaAdresowa.dodajAdresata();
                 break;
             case '2':
-                //wyswietlWszystkichAdresatow(adresaci);
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '3':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '4':
                 ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
-                //adresaci.clear();
+                ksiazkaAdresowa.czyszczenieVectoraAdresaci();
                 break;
             }
         }
     }
-
-    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-
     return 0;
 }

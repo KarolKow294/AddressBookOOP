@@ -25,9 +25,8 @@ class UzytkownikMenedzer
     MetodyPomocnicze metodyPomocnicze;
 
 public:
-    UzytkownikMenedzer(string nazwaPlikuZuzytkownikami) : plikZUzytkownikami(nazwaPlikuZuzytkownikami) {};
+    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
-    void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     void logowanieUzytkownika();
     int pobierzIdZalogowanegoUzytkownika();
