@@ -2,7 +2,7 @@
 
 void Uzytkownik::ustawId(int noweId)
 {
-    if (id = noweId >= 0)
+    if (noweId >= 0)
         id = noweId;
 }
 void Uzytkownik::ustawLogin(string nowyLogin)
@@ -13,7 +13,6 @@ void Uzytkownik::ustawHaslo(string noweHaslo)
 {
     haslo = noweHaslo;
 }
-
 int Uzytkownik::pobierzId()
 {
     return id;
