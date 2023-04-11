@@ -10,14 +10,14 @@ using namespace std;
 class MetodyPomocnicze
 {
 public:
-    string konwerjsaIntNaString(int liczba);
-    string wczytajLinie();
-    char wczytajZnak();
-    int wczytajLiczbeCalkowita();
-    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-    string pobierzLiczbe(string tekst, int pozycjaZnaku);
-    int konwersjaStringNaInt(string liczba);
-    bool czyPlikJestPusty(fstream &plikTekstowy);
+    static string konwerjsaIntNaString(int liczba);
+    static string wczytajLinie();
+    static char wczytajZnak();
+    static int wczytajLiczbeCalkowita();
+    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    static string pobierzLiczbe(string tekst, int pozycjaZnaku);
+    static int konwersjaStringNaInt(string liczba);
+    static bool czyPlikJestPusty(fstream &plikTekstowy);
 };
 
 #endif

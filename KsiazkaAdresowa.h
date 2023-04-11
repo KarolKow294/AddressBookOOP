@@ -5,7 +5,7 @@
 
 #include "UzytkownikMenedzer.h"
 #include "AdresatMenedzer.h"
-#include "Menu.h"
+#include "MetodyPomocnicze.h"
 
 using namespace std;
 
@@ -13,27 +13,22 @@ class KsiazkaAdresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
     AdresatMenedzer adresatMenedzer;
-    Menu menu;
+
 public:
-    KsiazkaAdresowa(int noweIdZalogowanegoUzytkownika, string nazwaZPlikuZUzytkownikami, int noweIdAdresata, string nazwaZPlikuZAdresatami) : uzytkownikMenedzer(nazwaZPlikuZUzytkownikami),
+    KsiazkaAdresowa(string nazwaZPlikuZUzytkownikami, string nazwaZPlikuZAdresatami) : uzytkownikMenedzer(nazwaZPlikuZUzytkownikami),
     adresatMenedzer(nazwaZPlikuZAdresatami) {
-    uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(noweIdZalogowanegoUzytkownika);
-    adresatMenedzer.ustawIdOstatniegoAdresata(noweIdAdresata);
-    uzytkownikMenedzer.wczytajUzytkownikowZPliku();
+        uzytkownikMenedzer.wczytajUzytkownikowZPliku();
     };
+
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
+    void wybierzOpcjeZMenuGlownego();
+    void wybierzOpcjeZMenuUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-    char wybierzOpcjeZMenuGlownego();
-    char wybierzOpcjeZMenuUzytkownika();
-    int pobierzIdZalogowanegoUzytkownika();
-    void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika);
+    void wylogujUzytkownika();
+    bool sprawdzCzyUzytkownikJestWylogowany();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    bool czyVectorAdresaciJestPusty();
-    int pobierzIdOstatniegoAdresata();
-    void czyszczenieVectoraAdresaci();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 };
 
 #endif
