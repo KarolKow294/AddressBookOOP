@@ -22,10 +22,12 @@ class UzytkownikMenedzer
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
     PlikZUzytkownikami plikZUzytkownikami;
-    MetodyPomocnicze metodyPomocnicze;
 
 public:
-    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
+    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
+        idZalogowanegoUzytkownika = 0;
+    };
+
     void rejestracjaUzytkownika();
     void wczytajUzytkownikowZPliku();
     void logowanieUzytkownika();
