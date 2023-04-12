@@ -10,7 +10,7 @@ int main()
 
     while (true)
     {
-        if (ksiazkaAdresowa.sprawdzCzyUzytkownikJestWylogowany())
+        if (!ksiazkaAdresowa.sprawdzCzyUzytkownikJestZalogowany())
         {
             ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
         }
