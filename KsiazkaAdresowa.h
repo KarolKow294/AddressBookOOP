@@ -35,6 +35,8 @@ public:
     void wylogujUzytkownika();
     bool sprawdzCzyUzytkownikJestZalogowany();
     void dodajAdresata();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
     void wyswietlWszystkichAdresatow();
 };
 

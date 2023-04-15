@@ -55,10 +55,14 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;
-    cout << "2. Wyswietl adresatow" << endl;
+    cout << "2. Wyszukaj po imieniu" << endl;
+    cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "4. Wyswietl adresatow" << endl;
+    cout << "5. Usun adresata" << endl;
+    cout << "6. Edytuj adresata" << endl;
     cout << "---------------------------" << endl;
-    cout << "3. Zmien haslo" << endl;
-    cout << "4. Wyloguj sie" << endl;
+    cout << "7. Zmien haslo" << endl;
+    cout << "8. Wyloguj sie" << endl;
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
 
@@ -70,12 +74,24 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
         dodajAdresata();
         break;
     case '2':
-        wyswietlWszystkichAdresatow();
+        wyszukajAdresatowPoImieniu();
         break;
     case '3':
-        zmianaHaslaZalogowanegoUzytkownika();
+        wyszukajAdresatowPoNazwisku();
         break;
     case '4':
+        wyswietlWszystkichAdresatow();
+        break;
+    case '5':
+
+        break;
+    case '6':
+
+        break;
+    case '7':
+        zmianaHaslaZalogowanegoUzytkownika();
+        break;
+    case '8':
         wylogujUzytkownika();
         break;
     }
@@ -109,6 +125,16 @@ void KsiazkaAdresowa::dodajAdresata()
         cout << "Aby dodac adresata, nalezy najpierw sie zalogowac" << endl;
         system("pause");
     }
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+    adresatMenedzer -> wyszukajAdresatowPoImieniu();
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
+{
+    adresatMenedzer -> wyszukajAdresatowPoNazwisku();
 }
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
