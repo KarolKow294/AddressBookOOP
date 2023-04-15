@@ -83,7 +83,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
         wyswietlWszystkichAdresatow();
         break;
     case '5':
-
+        usunAdresata();
         break;
     case '6':
 
@@ -140,4 +140,9 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
     adresatMenedzer -> wyswietlWszystkichAdresatow();
+}
+
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatMenedzer -> usunAdresata();
 }
