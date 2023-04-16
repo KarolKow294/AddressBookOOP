@@ -6,14 +6,14 @@
 #include <fstream>
 #include <cstdlib>
 
+#include "PlikTekstowy.h"
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
 
 using namespace std;
 
-class PlikZAdresatami
+class PlikZAdresatami : public PlikTekstowy
 {
-    const string NAZWA_PLIKU_Z_ADRESATAMI;
     string nazwaTymczasowegoPlikuZAdresatami;
     int idOstatniegoAdresata;
 
@@ -25,12 +25,12 @@ class PlikZAdresatami
     void zmienNazwePliku(string staraNazwa, string nowaNazwa);
 
 public:
-    PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
+    PlikZAdresatami(string nazwaPlikuZAdresatami) : PlikTekstowy(nazwaPlikuZAdresatami)
     {
         idOstatniegoAdresata = 0;
 
-        nazwaTymczasowegoPlikuZAdresatami = NAZWA_PLIKU_Z_ADRESATAMI;
-        nazwaTymczasowegoPlikuZAdresatami.insert((NAZWA_PLIKU_Z_ADRESATAMI.length() - 4), "_tymczasowo");
+        nazwaTymczasowegoPlikuZAdresatami = pobierzNazwePliku();
+        nazwaTymczasowegoPlikuZAdresatami.insert((nazwaTymczasowegoPlikuZAdresatami.length() - 4), "_tymczasowo");
     };
 
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
