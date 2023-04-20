@@ -13,7 +13,7 @@ using namespace std;
 class AdresatMenedzer
 {
     PlikZAdresatami plikZAdresatami;
-    int ID_ZALOGOWANEGO_UZYTKOWNIKA;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
 
     Adresat podajDaneNowegoAdresata();

@@ -129,25 +129,65 @@ void KsiazkaAdresowa::dodajAdresata()
 
 void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
 {
-    adresatMenedzer -> wyszukajAdresatowPoImieniu();
+    if (sprawdzCzyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer -> wyszukajAdresatowPoImieniu();
+    }
+    else
+    {
+        cout << "Aby wyszukac adresata po imieniu, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
 }
 
 void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
 {
-    adresatMenedzer -> wyszukajAdresatowPoNazwisku();
+    if (sprawdzCzyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer -> wyszukajAdresatowPoNazwisku();
+    }
+    else
+    {
+        cout << "Aby dodac wyszukac adresata po nazwisku, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
 }
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
-    adresatMenedzer -> wyswietlWszystkichAdresatow();
+    if (sprawdzCzyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer -> wyswietlWszystkichAdresatow();
+    }
+    else
+    {
+        cout << "Aby wyswietlic wszystkich adresatow, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
 }
 
 void KsiazkaAdresowa::usunAdresata()
 {
-    adresatMenedzer -> usunAdresata();
+    if (sprawdzCzyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer -> usunAdresata();
+    }
+    else
+    {
+        cout << "Aby usunac adresata, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
 }
 
 void KsiazkaAdresowa::edytujAdresata()
 {
-    adresatMenedzer -> edytujAdresata();
+    if (sprawdzCzyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer -> edytujAdresata();
+    }
+    else
+    {
+        cout << "Aby edytowac adresata, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
 }
