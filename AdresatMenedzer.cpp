@@ -185,7 +185,7 @@ void AdresatMenedzer::usunAdresata()
             }
         }
     }
-    if (czyIstniejeAdresat == false)
+    if (!czyIstniejeAdresat)
     {
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");
@@ -268,7 +268,7 @@ void AdresatMenedzer::edytujAdresata()
             }
         }
     }
-    if (czyIstniejeAdresat == false)
+    if (!czyIstniejeAdresat)
     {
         cout << endl << "Nie ma takiego adresata." << endl << endl;
     }
